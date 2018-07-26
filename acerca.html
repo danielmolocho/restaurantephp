@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>WIZDOM's HOUSE</title>
+<link rel="stylesheet" href="css/estilosindex.css">
+</head>
+<script>
+function valida(e){
+    tecla = (document.all) ? e.keyCode : e.which;
+
+    //Tecla de retroceso para borrar, siempre la permite
+    if (tecla==8){
+        return true;
+    }
+        
+    // Patron de entrada, en este caso solo acepta numeros
+    patron =/[0-9]/;
+    tecla_final = String.fromCharCode(tecla);
+    return patron.test(tecla_final);
+}
+</script>
+<body>
+    <header >
+    <div class="wrapper">
+    <div class="logo">
+        WIZDOM's HOUSE
+    </div>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="filosofia.html">Filosofia</a>
+        <a href="acerca.html">Acerca</a>
+        <a href="reservaciones.php">Reservaciones</a>
+    </nav>
+    </div>
+</header>
+<section class="contenido wrapper">
+     <p>Ven y conoce nuestra nueva maquina automatizada de bebidas.</p>
+    <p >
+    <iframe width="1170" height="550" src="//www.youtube.com/embed/9C8uEgC3BGs" frameborder="0" allowfullscreen></iframe>
+    <p>prepara bebidas de algunos licores como lo son whiskey, ron, vodka, tequila, curacao azul y licor de cafe</p>
+    
+    
+</section>
+     
+</body>
+</html>
