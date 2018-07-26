@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>formulario de registro</title>
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<script>
+function valida(e){
+    tecla = (document.all) ? e.keyCode : e.which;
+
+    //Tecla de retroceso para borrar, siempre la permite
+    if (tecla==8){
+        return true;
+    }
+        
+    // Patron de entrada, en este caso solo acepta numeros
+    patron =/[0-9]/;
+    tecla_final = String.fromCharCode(tecla);
+    return patron.test(tecla_final);
+}
+</script>
+<body>
+    <header >
+    <div class="wrapper">
+    <div class="logo">
+        WIZDOM's HOUSE
+    </div>
+    <nav>
+        
+        <a href="reservaciones.php">REGRESAR</a>
+    </nav>
+    </div>
+</header> 
+<h1>ADMINISTRADORES</h1>
+    <form action="login.php" method="post" class="form-registrer" >
+      <h2 class="form-titulo">BIENVENIDO</h2>
+      <div class="contenedor">
+         <input type="text"   name="usuario" placeholder="Usuario" class="input-48" required>
+         <input type="password"   name="contra" placeholder="Contraseña" class="input-100" required>
+         <select name="puesto"  class="input-48" required>
+   <option value="0">Puesto:</option>
+  <option value="COCINA">cocina</option>
+  <option value="RECURSOSHUMANOS">recursos humanos</option>
+  <option value="ALMACEN">almacen</option>
+  <option value="COMPRAS">compras</option>
+    <option value="RECEPCION">recepcion</option>
+    <option value="BAR">bar</option>
+         </select>
+
+      
+         <input type="reset" value="BORRAR" class="btn-enviar">
+         <input type="submit" value="ENTRAR" class="btn-enviar">
+
+         
+        
+      </div>
+    </form>
+    
+</body>
+</html>
