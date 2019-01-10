@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <title>WIZDOM's HOUSE</title>
 <link rel="stylesheet" href="css/estilosindex.css">
+	<link rel="stylesheet" type="text/css" href="css/slicebox.css" />
+	<link rel="stylesheet" type="text/css" href="css/demo.css" />
+	<link rel="stylesheet" type="text/css" href="css/custom.css" />
+	<script type="text/javascript" src="js/modernizr.custom.46884.js"></script>
+
 </head>
 
 <body>
@@ -20,19 +25,145 @@
 	</nav>
 	</div>
 </header>
+
+<div class="container">
+
+		
+
+			<h1>BIENVENIDO <span>A WIZDOMHOUSE CON DRUNK-BOT</span></h1>
+			
+			
+
+			<div class="wrapperr">
+
+				<ul id="sb-slider" class="sb-slider">
+					<li>
+						<a href="#" target="_blank"><img src="images/01.jpg" width="800" height="500" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>drunk-bot</h3>
+						</div>
+					</li>
+					<li>
+						<a href="#" target="_blank"><img src="images/02.jpg" width="800" height="500" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>bebidas automaticas</h3>
+						</div>
+					</li>
+					<li>
+						<a href="#" target="_blank"><img src="images/03.jpg" width="800" height="500" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>drunk-bot</h3>
+						</div>
+					</li>
+					<li>
+						<a href="#" target="_blank"><img src="images/04.jpg" width="800" height="500" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>hielos automaticos</h3>
+						</div>
+					</li>
+					<li>
+						<a href="#" target="_blank"><img src="images/05.jpg" width="800" height="500" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>drunk-bot</h3>
+						</div>
+					</li>
+
+					<li>
+						<a href="#" target="_blank"><img src="images/06.jpg" width="800" height="500" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>mas de 10 bebidas</h3>
+						</div>
+					</li>
+					<li>
+						<a href="#" target="_blank"><img src="images/07.jpg" width="800" height="500" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>un bar del futuro</h3>
+						</div>
+					</li>
+				</ul>
+
+				<div id="shadow" class="shadow"></div>
+
+				<div id="nav-arrows" class="nav-arrows">
+					<a href="#">Next</a>
+					<a href="#">Previous</a>
+				</div>
+
+			</div><!-- /wrapper -->
+			
+
+			<p class="info"><strong>Example 3:</strong> Random orientation and number of slices</p>
+
+		</div>
+
 <section class="contenido wrapper">
 	<p >
-	<img class="bar" aling="center" src="img/bar1.jpg">
+	<img class="bar" aling="center" title="nuestras instalaciones" src="img/bar1.jpg">
 	</p>
 	<p>Nuestro equipo de profesionales expertos está encantado de darle la bienvenida y de sugerirle que empiece su cena con un aperitivo en nuestro bar, mientras tanto, puede elegir su menú en nuestra variada carta, o decidirse por alguna de las especialidades del día.</p>
 	<p >
-	<img class="bar" aling="center" src="img/bar.jpg">
+	<img class="bar" aling="center" title="nuestras bebidas" src="img/bar.jpg">
 	</p>
 	<p>Tenemos una bodega completa y abundante con una selección de buenos vinos portugueses. Además, el Sr. Joaquim estará encantado de ayudarle a elegir el vino más apropiado para acompañar su menú.</p>
 	<p >
-	<img class="bar" aling="center" src="img/bar2.jpg">
+	<img class="bar" aling="center" title="nuestras comidas" src="img/bar2.jpg">
 	</p>
 	<p>Junto a la sala principal del restaurante encontrará una agradable terraza ajardinada para disfrutar de su comida al aire libre, un pabellón de invierno con aire acondicionado y un patio de recreo para los niños.</p>
 </section>
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.slicebox.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				
+				var Page = (function() {
+
+					var $navArrows = $( '#nav-arrows' ).hide(),
+						$shadow = $( '#shadow' ).hide(),
+						slicebox = $( '#sb-slider' ).slicebox( {
+							onReady : function() {
+
+								$navArrows.show();
+								$shadow.show();
+
+							},
+							orientation : 'r',
+							cuboidsRandom : true
+						} ),
+						
+						init = function() {
+
+							initEvents();
+							
+						},
+						initEvents = function() {
+
+							// add navigation events
+							$navArrows.children( ':first' ).on( 'click', function() {
+
+								slicebox.next();
+								return false;
+
+							} );
+
+							$navArrows.children( ':last' ).on( 'click', function() {
+								
+								slicebox.previous();
+								return false;
+
+							} );
+
+						};
+
+						return { init : init };
+
+				})();
+
+				Page.init();
+
+			});
+		</script>
+
 </body>
 </html>
